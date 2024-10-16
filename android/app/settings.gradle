@@ -1,0 +1,7 @@
+rootProject.name = 'PrimepassApp'
+
+include ':react-native-read-sms'
+project(':react-native-read-sms').projectDir = new File(rootProject.projectDir, '../node_modules/react-native-read-sms/android')
+
+apply from: file("../node_modules/@react-native-community/cli-platform-android/native_modules.gradle"); applyNativeModulesSettingsGradle(settings)
+include ':app'

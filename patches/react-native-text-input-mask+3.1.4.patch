@@ -1,0 +1,25 @@
+diff --git a/node_modules/react-native-text-input-mask/dist/index.d.ts b/node_modules/react-native-text-input-mask/dist/index.d.ts
+index f50727c..3a54d53 100644
+--- a/node_modules/react-native-text-input-mask/dist/index.d.ts
++++ b/node_modules/react-native-text-input-mask/dist/index.d.ts
+@@ -130,5 +130,6 @@ export interface TextInputMaskProps extends TextInputProps, MaskOptions {
+ interface Handles {
+     focus: () => void;
+     blur: () => void;
++    clear: () => void;
+ }
+ export default TextInputMask;
+diff --git a/node_modules/react-native-text-input-mask/dist/index.js b/node_modules/react-native-text-input-mask/dist/index.js
+index bcf9092..7c5845b 100644
+--- a/node_modules/react-native-text-input-mask/dist/index.js
++++ b/node_modules/react-native-text-input-mask/dist/index.js
+@@ -53,6 +53,9 @@ const TextInputMask = forwardRef((_a, ref) => {
+         blur: () => {
+             var _a;
+             (_a = input.current) === null || _a === void 0 ? void 0 : _a.blur();
++        },
++        clear: () => {
++          input.current?.clear();
+         }
+     }));
+     return (<TextInput {...rest} ref={input} value={maskedValue} multiline={primaryFormat && Platform.OS === 'ios' ? false : multiline} onChangeText={(masked) => __awaiter(void 0, void 0, void 0, function* () {

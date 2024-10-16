@@ -1,0 +1,83 @@
+{
+  "project_info": {
+    "project_number": "292436547521",
+    "firebase_url": "https://primepass-app-14ef8.firebaseio.com",
+    "project_id": "primepass-app-14ef8",
+    "storage_bucket": "primepass-app-14ef8.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:292436547521:android:8a029d824ba7f7860f4140",
+        "android_client_info": {
+          "package_name": "co.primepass"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "292436547521-acln3ss2qmoa34u9khb1f8rl04qjk3rf.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDXvvubiUw8py28-tGJ4kEayo5a-w_lv8Y"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "292436547521-acln3ss2qmoa34u9khb1f8rl04qjk3rf.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "292436547521-v1r36eneg8t02pv5mo7drdevmj33vc6c.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "co.primepass"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:292436547521:android:4cabc050bfc4327f0f4140",
+        "android_client_info": {
+          "package_name": "com.primepassapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "292436547521-acln3ss2qmoa34u9khb1f8rl04qjk3rf.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDXvvubiUw8py28-tGJ4kEayo5a-w_lv8Y"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "292436547521-acln3ss2qmoa34u9khb1f8rl04qjk3rf.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "292436547521-v1r36eneg8t02pv5mo7drdevmj33vc6c.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "co.primepass"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

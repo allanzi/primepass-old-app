@@ -1,0 +1,6 @@
+**/*.js
+node_modules
+build
+.vscode
+__tests__
+/*.js

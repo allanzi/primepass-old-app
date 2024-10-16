@@ -1,0 +1,36 @@
+{
+  "env": {
+    "node": true,
+    "es2021": true
+  },
+  "extends": [
+    "plugin:react/recommended",
+    "airbnb",
+    "airbnb-typescript"
+  ],
+  "parserOptions": {
+    "ecmaFeatures": {
+      "jsx": true,
+      "js": true
+    },
+    "ecmaVersion": 12,
+    "sourceType": "module",
+    "project": "./tsconfig.json"
+  },
+  "plugins": [
+    "react"
+  ],
+  "rules": {
+    "consistent-return": "off",
+    "global-require": "off",
+    "implicit-arrow-linebreak": "off",
+    "@typescript-eslint/no-use-before-define": ["error"],
+    "indent": ["error", 2, {"SwitchCase": 1}],
+    "react/jsx-indent": ["error", 2],
+    "react/jsx-indent-props": ["error", 2],
+    "import/extensions": [
+      "error"
+   ],
+   "react/destructuring-assignment": "off"
+  }
+}

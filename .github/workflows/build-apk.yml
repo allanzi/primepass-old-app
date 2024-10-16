@@ -1,0 +1,45 @@
+name: Build APK
+on: workflow_dispatch
+jobs:
+  build-android:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/setup-node@v3
+        with:
+          node-version: 16
+      - name: Set env as secret
+        env:
+          MY_RELEASE_KEYSTORE_PRHASE: ${{ secrets.MY_RELEASE_KEYSTORE_PRHASE }}
+          MY_RELEASE_KEYSTORE: ${{ secrets.MY_RELEASE_KEYSTORE }}
+        run: |
+          cd android/app
+          mkdir backup
+          cd backup
+          echo "${{ secrets.MY_RELEASE_KEYSTORE }}" > bkp.keystore.asc
+          gpg -d --passphrase "${{ secrets.MY_RELEASE_KEYSTORE_PRHASE }}" --batch bkp.keystore.asc > my-release-key.keystore.bkp
+          git config --global user.name "CI BOT"
+          git config --global user.email "bot@primepass.com.br"
+          git add ./
+          git commit -m "Add Build"
+          git push
+      - name: Create .env
+        run: |
+          cp .env.prod .env
+      - name: Install yarn dependencies
+        run: |
+          yarn
+      - name: Create the keystore
+        run: |
+          cd android/app
+          echo "${{ secrets.MY_RELEASE_KEYSTORE }}" > my-release-key.keystore.asc
+          gpg -d --passphrase "${{ secrets.MY_RELEASE_KEYSTORE_PRHASE }}" --batch my-release-key.keystore.asc > my-release-key.keystore
+      - name: Build Android Release
+        run: |
+          yarn assembleRelease
+      - name: Upload to slack step
+        uses: adrey/slack-file-upload-action@master
+        with:
+          token: ${{ secrets.SLACK_TOKEN }}
+          path: android/app/build/outputs/apk/release/app-release.apk
+          channel: general
